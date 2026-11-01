@@ -1,43 +1,76 @@
 <div align="center">
 
-# Andreas Svanberg Hummelmose
+# Hi, I'm Andreas 👋
 
-**MSc student in Computer Science · Aalborg University, Denmark**
+### MSc Computer Science student at Aalborg University · Machine learning research · LLMs · Recommender systems
 
-Machine learning research · Recommender systems · Reproducibility
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1200&center=true&vCenter=true&width=640&lines=Machine+learning+research;Fine-tuning+LLMs+with+LoRA+and+QLoRA;Knowledge+distillation;Recommender+systems;Reproducible+ML+research" alt="Typing SVG" />
 
 </div>
 
 ---
 
-## About me
+## 👨‍💻 About me
 
-I am a master's student in computer science at Aalborg University, working on machine learning research. I am interested in the gap between what machine learning methods are claimed to do and what they actually do. I analyse methods from first principles, reproduce published experiments under controlled conditions, and build software that makes results easy to verify.
+I'm a master's student in computer science at Aalborg University, Denmark, working on machine learning research. I care about the gap between what machine learning methods are claimed to do and what they actually do, so I analyse methods from first principles, reproduce published results under controlled conditions, and build small, well-tested research software that makes results easy to verify.
 
-## Research interests
+## 🚀 What I work on
 
-- **Recommender systems:** multimodal and cold-start recommendation, and the reproducibility of published models.
-- **Machine learning theory:** the mathematics behind how models are trained and evaluated.
-- **Reproducible research:** controlled experiments, sound statistics, and small, well-tested research software.
+- 🔬 **Machine learning research**: how training choices such as loss functions, reweighting and regularisation change what a model actually learns, backed by proofs and controlled experiments.
+- 🤖 **LLMs and generative AI**: parameter-efficient fine-tuning with **LoRA** and **QLoRA**, 4-bit quantisation, and open models such as **Qwen**.
+- 🧠 **Knowledge distillation**: the topic of my bachelor's project, together with hashing.
+- 🛍️ **Recommender systems**: multimodal and cold-start recommendation, graph-based recommenders, and the reproducibility of published models.
+- 🧪 **Reproducible research**: controlled experiments, sound statistics, and long training runs on GPU clusters.
 
-## Tech stack
+## 🛠️ Tech stack
 
 **Languages**
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Haskell](https://img.shields.io/badge/Haskell-5D4F85?style=flat-square&logo=haskell&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+<img src="https://skillicons.dev/icons?i=py,ts,js,java,c,cs,haskell,matlab,latex&perline=9" alt="Languages" />
 
-**Machine learning and research**
+**Machine learning**
 
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=flat-square&logo=latex&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
+![PEFT](https://img.shields.io/badge/PEFT%20·%20LoRA%20·%20QLoRA-FF9D00?style=for-the-badge&logo=huggingface&logoColor=white)
+![bitsandbytes](https://img.shields.io/badge/bitsandbytes-4--bit-6E40C9?style=for-the-badge)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 
-**Development**
+**Methods and models**
 
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+`LoRA` `QLoRA` `PEFT` `Quantisation` `Knowledge distillation` `Hashing` `Qwen` `Transformers`
+`Recommender systems` `Graph neural networks` `Multimodal learning` `Class imbalance` `Statistical testing`
+
+**Research and infrastructure**
+
+<img src="https://skillicons.dev/icons?i=git,github,linux,bash,vscode&perline=5" alt="Tools" />
+
+![Slurm](https://img.shields.io/badge/Slurm-GPU%20clusters-0B3D91?style=for-the-badge)
+![NVIDIA](https://img.shields.io/badge/NVIDIA-GPU%20training-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
+![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
+
+**Web (earlier projects)**
+
+<img src="https://skillicons.dev/icons?i=vue,angular,nodejs,html,css,php&perline=6" alt="Web" />
+
+## 🎓 Education
+
+- 🎓 **MSc in Computer Science**, Aalborg University (ongoing)
+- 🎓 **BSc in Computer Science**, Aalborg University, with a bachelor's project on knowledge distillation
+
+## 🌱 Currently
+
+- 📝 Writing up research on machine learning training objectives
+- 🔭 Pre-thesis project on multimodal recommender systems
+- 🤝 Open to collaborations on machine learning research and tooling
+
+---
+
+<div align="center">
+
+*"Measure what models actually learn, not what they are claimed to learn."*
+
+</div>
