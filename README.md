@@ -4,7 +4,7 @@
 
 ### MSc Computer Science student at Aalborg University · Machine learning research · LLMs · Recommender systems
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1200&center=true&vCenter=true&width=640&lines=Machine+learning+research;Fine-tuning+LLMs+with+LoRA+and+QLoRA;Knowledge+distillation;Recommender+systems;Reproducible+ML+research" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1200&center=true&vCenter=true&width=640&lines=Machine+learning+research;Fine-tuning+LLMs+with+LoRA+and+QLoRA;Distilling+LLMs+for+faster+inference;Recommender+systems;Reproducible+ML+research" alt="Typing SVG" />
 
 </div>
 
@@ -18,7 +18,7 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 
 - 🔬 **Machine learning research**: how training choices such as loss functions, reweighting and regularisation change what a model actually learns, backed by proofs and controlled experiments.
 - 🤖 **LLMs and generative AI**: parameter-efficient fine-tuning with **LoRA** and **QLoRA**, 4-bit quantisation, and open models such as **Qwen**.
-- 🧠 **Knowledge distillation**: the topic of my bachelor's project, together with hashing.
+- ⚡ **LLM inference optimisation**: distilling large language models into smaller, faster ones, the topic of my bachelor's project.
 - 🛍️ **Recommender systems**: multimodal and cold-start recommendation, graph-based recommenders, and the reproducibility of published models.
 - 🧪 **Reproducible research**: controlled experiments, sound statistics, and long training runs on GPU clusters.
 
@@ -41,7 +41,7 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 
 **Methods and models**
 
-`LoRA` `QLoRA` `PEFT` `Quantisation` `Knowledge distillation` `Hashing` `Qwen` `Transformers`
+`LoRA` `QLoRA` `PEFT` `Quantisation` `Knowledge distillation` `Inference optimisation` `Hashing` `Qwen` `Transformers`
 `Recommender systems` `Graph neural networks` `Multimodal learning` `Class imbalance` `Statistical testing`
 
 **Research and infrastructure**
@@ -59,7 +59,7 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 ## 🎓 Education
 
 - 🎓 **MSc in Computer Science**, Aalborg University (ongoing)
-- 🎓 **BSc in Computer Science**, Aalborg University, with a bachelor's project on knowledge distillation
+- 🎓 **BSc in Computer Science**, Aalborg University, with a bachelor's project on inference optimisation by distilling LLMs
 
 ## 🌱 Currently
 
