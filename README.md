@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hi, I'm Andreas 👋
+# Hi, I'm Andreas
 
 ### MSc Computer Science student at Aalborg University · Machine learning research · LLMs · Recommender systems
 
@@ -10,19 +10,19 @@
 
 ---
 
-## 👨‍💻 About me
+## About me
 
 I'm a master's student in computer science at Aalborg University, Denmark, working on machine learning research. I care about the gap between what machine learning methods are claimed to do and what they actually do, so I analyse methods from first principles, reproduce published results under controlled conditions, and build small, well-tested research software that makes results easy to verify.
 
-## 🚀 What I work on
+## What I work on
 
-- 🔬 **Machine learning research**: how training choices such as loss functions, reweighting and regularisation change what a model actually learns, backed by proofs and controlled experiments.
-- 🤖 **LLMs and generative AI**: parameter-efficient fine-tuning with **LoRA** and **QLoRA**, 4-bit quantisation, and open models such as **Qwen**.
-- ⚡ **LLM inference optimisation**: distilling large language models into smaller, faster ones, the topic of my bachelor's project.
-- 🛍️ **Recommender systems**: multimodal and cold-start recommendation, graph-based recommenders, and the reproducibility of published models.
-- 🧪 **Reproducible research**: controlled experiments, sound statistics, and long training runs on GPU clusters.
+- **Machine learning research**: how training choices such as loss functions, reweighting and regularisation change what a model actually learns, backed by proofs and controlled experiments.
+- **LLMs and generative AI**: parameter-efficient fine-tuning with **LoRA** and **QLoRA**, 4-bit quantisation, and open models such as **Qwen**.
+- **LLM inference optimisation**: distilling large language models into smaller, faster ones, the topic of my bachelor's project.
+- **Recommender systems**: multimodal and cold-start recommendation, graph-based recommenders, and the reproducibility of published models.
+- **Reproducible research**: controlled experiments, sound statistics, and long training runs on GPU clusters.
 
-## 🛠️ Tech stack
+## Tech stack
 
 **Languages**
 
@@ -56,16 +56,16 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 
 <img src="https://skillicons.dev/icons?i=vue,angular,nodejs,html,css,php&perline=6" alt="Web" />
 
-## 🎓 Education
+## Education
 
-- 🎓 **MSc in Computer Science**, Aalborg University (ongoing)
-- 🎓 **BSc in Computer Science**, Aalborg University, with a bachelor's project on inference optimisation by distilling LLMs
+- **MSc in Computer Science**, Aalborg University (ongoing)
+- **BSc in Computer Science**, Aalborg University, with a bachelor's project on inference optimisation by distilling LLMs
 
-## 🌱 Currently
+## Currently
 
-- 📝 Writing up research on machine learning training objectives
-- 🔭 Pre-thesis project on multimodal recommender systems
-- 🤝 Open to collaborations on machine learning research and tooling
+- Writing up research on machine learning training objectives
+- Pre-thesis project on multimodal recommender systems
+- Open to collaborations on machine learning research and tooling
 
 ---
 
