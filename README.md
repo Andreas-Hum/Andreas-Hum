@@ -22,6 +22,12 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 - **Recommender systems**: multimodal and cold-start recommendation, graph-based recommenders, and the reproducibility of published models.
 - **Reproducible research**: controlled experiments, sound statistics, and long training runs on GPU clusters.
 
+## Projects
+
+**[Distillation Playground](https://andreas-hum.github.io/distillation-playground/)**: an interactive, in-browser demo of knowledge distillation. A teacher network and two small students train side by side on 2D data, one from the labels alone and one from the teacher's soft targets; sliders for the temperature, the mixing weight and the student size show when distillation helps. Written from scratch in TypeScript (no ML library, gradient-checked backpropagation). [Code](https://github.com/Andreas-Hum/distillation-playground)
+
+[![Distillation Playground](https://raw.githubusercontent.com/Andreas-Hum/distillation-playground/main/docs/screenshot.png)](https://andreas-hum.github.io/distillation-playground/)
+
 ## Tech stack
 
 **Languages**
