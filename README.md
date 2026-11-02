@@ -24,6 +24,8 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 
 ## Projects
 
+**[tinydistill](https://github.com/Andreas-Hum/tinydistill)** ![Work in progress](https://img.shields.io/badge/status-work%20in%20progress-orange?style=flat-square): distil an LLM classification prompt into a small, fast model that runs on a CPU. You describe the task in a short YAML file and give it unlabelled texts; an instruction-tuned LLM (Qwen2.5) labels them with soft targets, a small encoder learns to imitate them, and the result is exported to ONNX, optionally int8. It continues my bachelor's project on inference optimisation by distilling LLMs.
+
 **[Distillation Playground](https://andreas-hum.github.io/distillation-playground/)**: an interactive, in-browser demo of knowledge distillation. A teacher network and two small students train side by side on 2D data, one from the labels alone and one from the teacher's soft targets; sliders for the temperature, the mixing weight and the student size show when distillation helps. Written from scratch in TypeScript (no ML library, gradient-checked backpropagation). [Code](https://github.com/Andreas-Hum/distillation-playground)
 
 [![Distillation Playground](https://raw.githubusercontent.com/Andreas-Hum/distillation-playground/main/docs/screenshot.png)](https://andreas-hum.github.io/distillation-playground/)
