@@ -24,11 +24,32 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 
 ## Projects
 
-**[tinydistill](https://github.com/Andreas-Hum/tinydistill)** ![Work in progress](https://img.shields.io/badge/status-work%20in%20progress-orange?style=flat-square): distil an LLM classification prompt into a small, fast model that runs on a CPU. You describe the task in a short YAML file and give it unlabelled texts; an instruction-tuned LLM (Qwen2.5) labels them with soft targets, a small encoder learns to imitate them, and the result is exported to ONNX, optionally int8. It continues my bachelor's project on inference optimisation by distilling LLMs.
+### tinydistill ![Work in progress](https://img.shields.io/badge/status-work%20in%20progress-orange?style=flat-square)
 
-**[Distillation Playground](https://andreas-hum.github.io/distillation-playground/)**: an interactive, in-browser demo of knowledge distillation. A teacher network and two small students train side by side on 2D data, one from the labels alone and one from the teacher's soft targets; sliders for the temperature, the mixing weight and the student size show when distillation helps. Written from scratch in TypeScript (no ML library, gradient-checked backpropagation). [Code](https://github.com/Andreas-Hum/distillation-playground)
+Distil an LLM classification prompt into a small, fast model that runs on a CPU. Describe the task in a short YAML file and give it unlabelled texts: an instruction-tuned LLM labels them with soft targets, a small encoder learns to imitate them, and the result is exported to ONNX, optionally int8. It continues my bachelor's project on inference optimisation by distilling LLMs. [Code](https://github.com/Andreas-Hum/tinydistill)
 
-<a href="https://andreas-hum.github.io/distillation-playground/"><img src="https://raw.githubusercontent.com/Andreas-Hum/distillation-playground/main/docs/screenshot.png" alt="Distillation Playground" width="480"></a>
+```mermaid
+flowchart LR
+    A["Task prompt +<br/>unlabelled texts"] --> B["LLM teacher<br/>(Qwen2.5)"]
+    B -- "soft labels" --> C["Small encoder<br/>student"]
+    C --> D["ONNX / int8<br/>export"]
+    D --> E["Fast CPU<br/>inference"]
+```
+
+### Distillation Playground
+
+<table>
+<tr>
+<td>
+An interactive, in-browser demo of knowledge distillation. A teacher network and two small students train side by side on 2D data, one from the labels alone and one from the teacher's soft targets; sliders for the temperature, the mixing weight and the student size show when distillation helps. Written from scratch in TypeScript, with no ML library and gradient-checked backpropagation.
+<br><br>
+<b><a href="https://andreas-hum.github.io/distillation-playground/">Try the live demo</a></b> · <a href="https://github.com/Andreas-Hum/distillation-playground">Code</a>
+</td>
+<td width="340">
+<a href="https://andreas-hum.github.io/distillation-playground/"><img src="https://raw.githubusercontent.com/Andreas-Hum/distillation-playground/main/docs/screenshot.png" alt="Distillation Playground" width="320"></a>
+</td>
+</tr>
+</table>
 
 ## Tech stack
 
