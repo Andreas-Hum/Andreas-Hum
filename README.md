@@ -96,6 +96,13 @@ An interactive, in-browser demo of knowledge distillation. A teacher network and
 - Pre-thesis project on multimodal recommender systems
 - Open to collaborations on machine learning research and tooling
 
+## Contributions
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Andreas-Hum/Andreas-Hum/output/github-snake-dark.svg">
+  <img alt="Contribution graph as an animated snake" src="https://raw.githubusercontent.com/Andreas-Hum/Andreas-Hum/output/github-snake.svg">
+</picture>
+
 ---
 
 <div align="center">
