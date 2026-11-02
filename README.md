@@ -28,7 +28,7 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 
 **[Distillation Playground](https://andreas-hum.github.io/distillation-playground/)**: an interactive, in-browser demo of knowledge distillation. A teacher network and two small students train side by side on 2D data, one from the labels alone and one from the teacher's soft targets; sliders for the temperature, the mixing weight and the student size show when distillation helps. Written from scratch in TypeScript (no ML library, gradient-checked backpropagation). [Code](https://github.com/Andreas-Hum/distillation-playground)
 
-[![Distillation Playground](https://raw.githubusercontent.com/Andreas-Hum/distillation-playground/main/docs/screenshot.png)](https://andreas-hum.github.io/distillation-playground/)
+<a href="https://andreas-hum.github.io/distillation-playground/"><img src="https://raw.githubusercontent.com/Andreas-Hum/distillation-playground/main/docs/screenshot.png" alt="Distillation Playground" width="480"></a>
 
 ## Tech stack
 
