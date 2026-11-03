@@ -26,14 +26,20 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 
 ### tinydistill ![Work in progress](https://img.shields.io/badge/status-work%20in%20progress-orange?style=flat-square)
 
-Distil an LLM classification prompt into a small, fast model that runs on a CPU. Describe the task in a short YAML file and give it unlabelled texts: an instruction-tuned LLM labels them with soft targets, a small encoder learns to imitate them, and the result is exported to ONNX, optionally int8. It continues my bachelor's project on inference optimisation by distilling LLMs. [Code](https://github.com/Andreas-Hum/tinydistill)
+Distil an LLM classification prompt into a small, fast model that runs on a CPU. Describe the task in a short YAML file and give it unlabelled texts: an instruction-tuned LLM labels them with soft targets, a small encoder learns to imitate them, and the result is exported to ONNX, optionally int8. It continues my bachelor's project on inference optimisation by distilling LLMs. **[Try the live demo](https://andreas-hum.github.io/tinydistill/)** · [Code](https://github.com/Andreas-Hum/tinydistill) · [PyPI](https://pypi.org/project/tinydistill/)
 
 ```mermaid
 flowchart LR
-    A["Task prompt +<br/>unlabelled texts"] --> B["LLM teacher<br/>(Qwen2.5)"]
-    B -- "soft labels" --> C["Small encoder<br/>student"]
+    A["Task prompt +<br/>unlabelled texts"] --> B["LLM teacher(s)<br/>Qwen · Mistral · Phi · ..."]
+    S["Synthetic texts<br/>(synth)"] -.-> B
+    V["vLLM server"] -.-> B
+    K["A few gold labels<br/>per class"] -.-> B
+    K -.-> C
+    B -- "soft labels<br/>(ensembled)" --> C["Small encoder<br/>student"]
     C --> D["ONNX / int8<br/>export"]
     D --> E["Fast CPU<br/>inference"]
+    D --> W["Browser · server ·<br/>Hugging Face Hub"]
+    E -.-> F["Cascade: unsure<br/>texts to the LLM"]
 ```
 
 ### Distillation Playground
