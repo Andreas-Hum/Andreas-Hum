@@ -34,7 +34,7 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 [![CI](https://img.shields.io/github/actions/workflow/status/Andreas-Hum/tinydistill/ci.yml?branch=main&style=flat-square&label=CI&logo=github)](https://github.com/Andreas-Hum/tinydistill/actions/workflows/ci.yml)
 [![Models on Hugging Face](https://img.shields.io/badge/Hugging%20Face-distilled%20models-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/collections/Shroomy/tinydistill)
 
-Distil an LLM classification prompt into a small, fast model that runs on a CPU. Describe the task in a short YAML file and give it unlabelled texts: an instruction-tuned LLM labels them with soft targets, a small encoder learns to imitate them, and the result is exported to ONNX, optionally int8. It continues my bachelor's project on inference optimisation by distilling LLMs. **[Try the live demo](https://andreas-hum.github.io/tinydistill/)** · [Code](https://github.com/Andreas-Hum/tinydistill) · [PyPI](https://pypi.org/project/tinydistill/)
+Distil an LLM classification prompt into a small, fast model that runs on a CPU. Describe the task in a short YAML file and give it unlabelled texts: an instruction-tuned LLM labels them with soft targets, a small encoder learns to imitate them, and the result is exported to ONNX, optionally int8. It continues my bachelor's project on inference optimisation by distilling LLMs. **[Try the live demo](https://andreas-hum.github.io/tinydistill/demo/)** · [Docs](https://andreas-hum.github.io/tinydistill/) · [Code](https://github.com/Andreas-Hum/tinydistill) · [PyPI](https://pypi.org/project/tinydistill/)
 
 ```mermaid
 flowchart LR
