@@ -4,6 +4,10 @@
 
 ### MSc Computer Science student at Aalborg University · Machine learning research · LLMs · Recommender systems
 
+<a href="mailto:Andreas@hummelmose.dk"><img src="https://img.shields.io/badge/Email-Andreas%40hummelmose.dk-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+<a href="https://www.linkedin.com/in/andreas-hummelmose-77580a252/"><img src="https://img.shields.io/badge/LinkedIn-Andreas%20Hummelmose-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://huggingface.co/Shroomy"><img src="https://img.shields.io/badge/Hugging%20Face-Shroomy-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" /></a>
+
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1200&center=true&vCenter=true&width=640&lines=Machine+learning+research;Fine-tuning+LLMs+with+LoRA+and+QLoRA;Distilling+LLMs+for+faster+inference;Recommender+systems;Reproducible+ML+research" alt="Typing SVG" />
 
 </div>
@@ -25,6 +29,10 @@ I'm a master's student in computer science at Aalborg University, Denmark, worki
 ## Projects
 
 ### tinydistill ![Work in progress](https://img.shields.io/badge/status-work%20in%20progress-orange?style=flat-square)
+
+[![PyPI](https://img.shields.io/pypi/v/tinydistill?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/tinydistill/)
+[![CI](https://img.shields.io/github/actions/workflow/status/Andreas-Hum/tinydistill/ci.yml?branch=main&style=flat-square&label=CI&logo=github)](https://github.com/Andreas-Hum/tinydistill/actions/workflows/ci.yml)
+[![Models on Hugging Face](https://img.shields.io/badge/Hugging%20Face-distilled%20models-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/collections/Shroomy/tinydistill)
 
 Distil an LLM classification prompt into a small, fast model that runs on a CPU. Describe the task in a short YAML file and give it unlabelled texts: an instruction-tuned LLM labels them with soft targets, a small encoder learns to imitate them, and the result is exported to ONNX, optionally int8. It continues my bachelor's project on inference optimisation by distilling LLMs. **[Try the live demo](https://andreas-hum.github.io/tinydistill/)** · [Code](https://github.com/Andreas-Hum/tinydistill) · [PyPI](https://pypi.org/project/tinydistill/)
 
@@ -118,7 +126,7 @@ pull request where I could.
 
 `LoRA` `QLoRA` `PEFT` `Quantisation` `Knowledge distillation` `Inference optimisation` `Hashing` `Qwen` `Transformers`
 `Recommender systems` `Graph neural networks` `Multimodal learning` `Class imbalance` `Statistical testing`
-`Closed-form recommenders` `Cold-start recommendation` `Formal verification (Lean 4)` `Pre-registered evaluation`
+`Closed-form recommenders` `Cold-start recommendation` `Pre-registered evaluation`
 
 **Research and infrastructure**
 
@@ -127,7 +135,6 @@ pull request where I could.
 ![Slurm](https://img.shields.io/badge/Slurm-GPU%20clusters-0B3D91?style=for-the-badge)
 ![NVIDIA](https://img.shields.io/badge/NVIDIA-GPU%20training-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
 ![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
-![Lean 4](https://img.shields.io/badge/Lean%204-formal%20proofs-5E81AC?style=for-the-badge)
 
 **Web (earlier projects)**
 
