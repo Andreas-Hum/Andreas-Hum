@@ -88,9 +88,9 @@ pull request where I could.
 | Library | Finding | Status |
 |---|---|---|
 | [transformers](https://github.com/huggingface/transformers) | Doge's load-balancing loss paired expert loads (by expert id) with router probabilities in sorted rank order | **[Fix merged](https://github.com/huggingface/transformers/pull/50266)** |
-| transformers | Doge's MoE router reshape mixes tokens, so its logits depend on future tokens and other sequences in the batch | [Issue](https://github.com/huggingface/transformers/issues/50230) |
-| transformers | `TopHLogitsWarper` does not implement the documented Top-H rule | [Issue](https://github.com/huggingface/transformers/issues/50228) |
-| transformers | `ClapModel(return_loss=True)` computes the text-to-audio loss twice and never the audio-to-text loss | [Issue](https://github.com/huggingface/transformers/issues/50227) |
+| transformers | Doge's MoE router reshape mixes tokens, so its logits depend on future tokens and other sequences in the batch | [Issue](https://github.com/huggingface/transformers/issues/50230), confirmed; kept as-is for checkpoint compatibility |
+| transformers | `TopHLogitsWarper` does not implement the documented Top-H rule | [Issue](https://github.com/huggingface/transformers/issues/50228), fix and tests ready |
+| transformers | `ClapModel(return_loss=True)` computes the text-to-audio loss twice and never the audio-to-text loss | [Issue](https://github.com/huggingface/transformers/issues/50227), [fix PR](https://github.com/huggingface/transformers/pull/50319) by another contributor |
 | [PyTorch](https://github.com/pytorch/pytorch) | `kl_divergence` of transformed distributions returns the base KL for non-injective transforms | [Issue](https://github.com/pytorch/pytorch/issues/202967) |
 | PyTorch | `kl_divergence(Wishart, Wishart)` is wrong for batched distributions and has no gradient with respect to `p` | [Issue](https://github.com/pytorch/pytorch/issues/202966) |
 | PyTorch | `kl_divergence(Categorical, Categorical)` gives a NaN gradient when `p` has `-inf` logits | [Issue](https://github.com/pytorch/pytorch/issues/202965) |
@@ -103,7 +103,8 @@ pull request where I could.
 | [TensorFlow Probability](https://github.com/tensorflow/probability) | KL divergence of transformed distributions with a non-injective bijector returns the base KL | [PR](https://github.com/tensorflow/probability/pull/2037) |
 | [solo-learn](https://github.com/vturrisi/solo-learn) | The SupCon loss is the paper's L_in, not the L_out it specifies (Khosla et al. 2020, Eq. 2) | [PR](https://github.com/vturrisi/solo-learn/pull/402) |
 | [diffusers](https://github.com/huggingface/diffusers) | `--logit_mean` shifts SD3 training timesteps in the opposite direction to the paper | [Issue](https://github.com/huggingface/diffusers/issues/15166) |
-| [NVIDIA Merlin](https://github.com/NVIDIA-Merlin) | The logQ correction is applied before the temperature, which biases sampled-softmax training towards popular items ([models](https://github.com/NVIDIA-Merlin/models/issues/1249), [Transformers4Rec](https://github.com/NVIDIA-Merlin/Transformers4Rec/issues/826)); unique log-uniform sampling keeps the smallest ids | [Issue](https://github.com/NVIDIA-Merlin/Transformers4Rec/issues/825) |
+| [NVIDIA Merlin](https://github.com/NVIDIA-Merlin) | The logQ correction is applied before the softmax temperature, which biases sampled-softmax training towards popular items | [Issue](https://github.com/NVIDIA-Merlin/Transformers4Rec/issues/826), [fix PR](https://github.com/NVIDIA-Merlin/Transformers4Rec/pull/827); same bug in Merlin Models: [issue](https://github.com/NVIDIA-Merlin/models/issues/1249) |
+| NVIDIA Merlin | Unique log-uniform sampling keeps only the smallest ids, so rare items are corrected as if sampled far more often than they are | [PR](https://github.com/NVIDIA-Merlin/Transformers4Rec/pull/828) |
 
 ## Tech stack
 
