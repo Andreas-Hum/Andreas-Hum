@@ -42,6 +42,18 @@ flowchart LR
     E -.-> F["Cascade: unsure<br/>texts to the LLM"]
 ```
 
+**Results on Banking77** (77 intents, 3,080 held-out test texts; students learn from the teacher's soft labels plus 8
+gold labels per class; numbers from the generated table in
+[RESULTS.md](https://github.com/Andreas-Hum/tinydistill/blob/main/RESULTS.md)):
+
+| Model | Runs on | Test accuracy | Latency per text | Size | Speed-up |
+|---|---|---|---|---|---|
+| Teacher: Qwen2.5-7B-Instruct, 4-bit, 8 examples per class in the prompt | RTX 4090 | 0.783 | 264 ms | 5.4 GB | 1x |
+| Student: MiniLM-L6, int8 ONNX | CPU, 2 threads | **0.814** | 1.2 ms | 23 MB | **214x** |
+| Student: static embeddings, int8 ONNX | CPU, 2 threads | 0.802 | 0.1 ms | 8 MB | **3244x** |
+
+The students are more accurate than their teacher and hundreds of times faster on a CPU than the teacher on a GPU.
+
 ### Distillation Playground
 
 <table>
@@ -56,6 +68,31 @@ An interactive, in-browser demo of knowledge distillation. A teacher network and
 </td>
 </tr>
 </table>
+
+## Open-source contributions
+
+Mathematical bugs I found and reported in widely used ML libraries, each with a minimal reproduction, and fixed in a
+pull request where I could.
+
+| Library | Finding | Status |
+|---|---|---|
+| [transformers](https://github.com/huggingface/transformers) | Doge's load-balancing loss paired expert loads (by expert id) with router probabilities in sorted rank order | **[Fix merged](https://github.com/huggingface/transformers/pull/50266)** |
+| transformers | Doge's MoE router reshape mixes tokens, so its logits depend on future tokens and other sequences in the batch | [Issue](https://github.com/huggingface/transformers/issues/50230) |
+| transformers | `TopHLogitsWarper` does not implement the documented Top-H rule | [Issue](https://github.com/huggingface/transformers/issues/50228) |
+| transformers | `ClapModel(return_loss=True)` computes the text-to-audio loss twice and never the audio-to-text loss | [Issue](https://github.com/huggingface/transformers/issues/50227) |
+| [PyTorch](https://github.com/pytorch/pytorch) | `kl_divergence` of transformed distributions returns the base KL for non-injective transforms | [Issue](https://github.com/pytorch/pytorch/issues/202967) |
+| PyTorch | `kl_divergence(Wishart, Wishart)` is wrong for batched distributions and has no gradient with respect to `p` | [Issue](https://github.com/pytorch/pytorch/issues/202966) |
+| PyTorch | `kl_divergence(Categorical, Categorical)` gives a NaN gradient when `p` has `-inf` logits | [Issue](https://github.com/pytorch/pytorch/issues/202965) |
+| PyTorch | `torch.sparse.mm` on CUDA is nondeterministic, and deterministic mode neither fixes nor flags it | [Issue](https://github.com/pytorch/pytorch/issues/202030) |
+| [Keras](https://github.com/keras-team/keras) | `sparse_categorical_crossentropy(from_logits=True)` returns NaN on JAX and NumPy for `-inf` non-target logits | [PR](https://github.com/keras-team/keras/pull/24127) |
+| Keras | Focal cross-entropy with `from_logits=True` saturates, so confidently wrong logits get zero gradient | [PR](https://github.com/keras-team/keras/pull/24126) |
+| Keras | `CutMix`'s `factor` is the range of the Beta concentration, not of the mixing weight | [PR](https://github.com/keras-team/keras/pull/24128) |
+| [bitsandbytes](https://github.com/bitsandbytes-foundation/bitsandbytes) | LAMB and LARS never update a zero-norm parameter (zero-initialised biases, LoRA B matrices) | [PR](https://github.com/bitsandbytes-foundation/bitsandbytes/pull/2117) |
+| [lighteval](https://github.com/huggingface/lighteval) | The standard error of averaged rows is the mean of the subtask errors, about 7x too large on MMLU | [PR](https://github.com/huggingface/lighteval/pull/1468) |
+| [TensorFlow Probability](https://github.com/tensorflow/probability) | KL divergence of transformed distributions with a non-injective bijector returns the base KL | [PR](https://github.com/tensorflow/probability/pull/2037) |
+| [solo-learn](https://github.com/vturrisi/solo-learn) | The SupCon loss is the paper's L_in, not the L_out it specifies (Khosla et al. 2020, Eq. 2) | [PR](https://github.com/vturrisi/solo-learn/pull/402) |
+| [diffusers](https://github.com/huggingface/diffusers) | `--logit_mean` shifts SD3 training timesteps in the opposite direction to the paper | [Issue](https://github.com/huggingface/diffusers/issues/15166) |
+| [NVIDIA Merlin](https://github.com/NVIDIA-Merlin) | The logQ correction is applied before the temperature, which biases sampled-softmax training towards popular items ([models](https://github.com/NVIDIA-Merlin/models/issues/1249), [Transformers4Rec](https://github.com/NVIDIA-Merlin/Transformers4Rec/issues/826)); unique log-uniform sampling keeps the smallest ids | [Issue](https://github.com/NVIDIA-Merlin/Transformers4Rec/issues/825) |
 
 ## Tech stack
 
@@ -73,11 +110,15 @@ An interactive, in-browser demo of knowledge distillation. A teacher network and
 ![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)
+![ONNX Runtime](https://img.shields.io/badge/ONNX%20Runtime-int8-005CED?style=for-the-badge&logo=onnx&logoColor=white)
+![vLLM](https://img.shields.io/badge/vLLM-serving-30A2FF?style=for-the-badge)
 
 **Methods and models**
 
 `LoRA` `QLoRA` `PEFT` `Quantisation` `Knowledge distillation` `Inference optimisation` `Hashing` `Qwen` `Transformers`
 `Recommender systems` `Graph neural networks` `Multimodal learning` `Class imbalance` `Statistical testing`
+`Closed-form recommenders` `Cold-start recommendation` `Formal verification (Lean 4)` `Pre-registered evaluation`
 
 **Research and infrastructure**
 
@@ -86,6 +127,7 @@ An interactive, in-browser demo of knowledge distillation. A teacher network and
 ![Slurm](https://img.shields.io/badge/Slurm-GPU%20clusters-0B3D91?style=for-the-badge)
 ![NVIDIA](https://img.shields.io/badge/NVIDIA-GPU%20training-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
 ![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
+![Lean 4](https://img.shields.io/badge/Lean%204-formal%20proofs-5E81AC?style=for-the-badge)
 
 **Web (earlier projects)**
 
@@ -99,7 +141,8 @@ An interactive, in-browser demo of knowledge distillation. A teacher network and
 ## Currently
 
 - Writing up research on machine learning training objectives
-- Pre-thesis project on multimodal recommender systems
+- Pre-thesis project on reproducibility and cold-start ranking in multimodal recommender systems
+- Auditing ML libraries for mathematical bugs ([contributions](#open-source-contributions))
 - Open to collaborations on machine learning research and tooling
 
 ## Contributions
