@@ -40,8 +40,8 @@ Distil an LLM classification prompt into a small, fast model that runs on a CPU.
 
 ```mermaid
 flowchart LR
-    A["Task prompt +<br/>unlabelled texts"] --> B["LLM teacher(s)<br/>Qwen · Mistral · Phi · ..."]
-    T["tune: check the<br/>task file"] -.-> B
+    A["Task prompt +<br/>unlabelled texts"] --> B["LLM teacher(s)<br/>Qwen · Gemma · Mistral · ..."]
+    T["tune: test and rewrite<br/>the task file"] -.-> B
     S["Synthetic texts<br/>(synth)"] -.-> B
     V["vLLM server ·<br/>hosted API"] -.-> B
     K["A few gold labels<br/>per class"] -.-> B
@@ -51,6 +51,8 @@ flowchart LR
     D --> E["Fast CPU<br/>inference"]
     D --> W["Browser · server · Hub ·<br/>Python (Distiller)"]
     E -.-> F["Cascade: unsure<br/>texts to the LLM"]
+    F -. "refresh: retrain<br/>on what it asked" .-> C
+    C -. "improve: new texts<br/>for its confusions" .-> S
 ```
 
 **Results on Banking77** (77 intents, 3,080 held-out test texts; latency per text on an RTX 4090 for the teacher and 2
