@@ -70,12 +70,12 @@ The students are more accurate than their teacher and hundreds of times faster o
 <table>
 <tr>
 <td>
-An interactive, in-browser demo of knowledge distillation. A teacher network and two small students train side by side on 2D data, one from the labels alone and one from the teacher's soft targets; sliders for the temperature, the mixing weight and the student size show when distillation helps. Written from scratch in TypeScript, with no ML library and gradient-checked backpropagation.
+An interactive, in-browser demo of knowledge distillation. A teacher network and three small students train side by side on 2D data: one from the labels alone, one from the teacher's hard answers and one from its soft targets. A live view of each neuron, the probabilities of every model at any point, and sliders for the temperature, the mixing weight, the student size and the teacher's quality show when distillation helps. Written from scratch in TypeScript, with no ML library and gradient-checked backpropagation.
 <br><br>
 <b><a href="https://andreas-hum.github.io/distillation-playground/">Try the live demo</a></b> · <a href="https://github.com/Andreas-Hum/distillation-playground">Code</a>
 </td>
 <td width="340">
-<a href="https://andreas-hum.github.io/distillation-playground/"><img src="https://raw.githubusercontent.com/Andreas-Hum/distillation-playground/main/docs/screenshot.png" alt="Distillation Playground" width="320"></a>
+<a href="https://andreas-hum.github.io/distillation-playground/"><img src="https://raw.githubusercontent.com/Andreas-Hum/distillation-playground/main/docs/screenshot.png?v=2" alt="Distillation Playground" width="320"></a>
 </td>
 </tr>
 </table>
