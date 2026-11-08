@@ -82,32 +82,6 @@ An interactive, in-browser demo of knowledge distillation. A teacher network and
 </tr>
 </table>
 
-## Open-source contributions
-
-Mathematical bugs I found and reported in widely used ML libraries, each with a minimal reproduction, and fixed in a
-pull request where I could.
-
-| Library | Finding | Status |
-|---|---|---|
-| [transformers](https://github.com/huggingface/transformers) | Doge's load-balancing loss paired expert loads (by expert id) with router probabilities in sorted rank order | **[Fix merged](https://github.com/huggingface/transformers/pull/50266)** |
-| transformers | Doge's MoE router reshape mixes tokens, so its logits depend on future tokens and other sequences in the batch | [Issue](https://github.com/huggingface/transformers/issues/50230), confirmed; kept as-is for checkpoint compatibility |
-| transformers | `TopHLogitsWarper` does not implement the documented Top-H rule | [Issue](https://github.com/huggingface/transformers/issues/50228), fix and tests ready |
-| transformers | `ClapModel(return_loss=True)` computes the text-to-audio loss twice and never the audio-to-text loss | [Issue](https://github.com/huggingface/transformers/issues/50227), [fix PR](https://github.com/huggingface/transformers/pull/50319) by another contributor |
-| [PyTorch](https://github.com/pytorch/pytorch) | `kl_divergence` of transformed distributions returns the base KL for non-injective transforms | [Issue](https://github.com/pytorch/pytorch/issues/202967) |
-| PyTorch | `kl_divergence(Wishart, Wishart)` is wrong for batched distributions and has no gradient with respect to `p` | [Issue](https://github.com/pytorch/pytorch/issues/202966) |
-| PyTorch | `kl_divergence(Categorical, Categorical)` gives a NaN gradient when `p` has `-inf` logits | [Issue](https://github.com/pytorch/pytorch/issues/202965) |
-| PyTorch | `torch.sparse.mm` on CUDA is nondeterministic, and deterministic mode neither fixes nor flags it | [Issue](https://github.com/pytorch/pytorch/issues/202030) |
-| [Keras](https://github.com/keras-team/keras) | `sparse_categorical_crossentropy(from_logits=True)` returns NaN on JAX and NumPy for `-inf` non-target logits | [PR](https://github.com/keras-team/keras/pull/24127) |
-| Keras | Focal cross-entropy with `from_logits=True` saturates, so confidently wrong logits get zero gradient | [PR](https://github.com/keras-team/keras/pull/24126) |
-| Keras | `CutMix`'s `factor` is the range of the Beta concentration, not of the mixing weight | [PR](https://github.com/keras-team/keras/pull/24128) |
-| [bitsandbytes](https://github.com/bitsandbytes-foundation/bitsandbytes) | LAMB and LARS never update a zero-norm parameter (zero-initialised biases, LoRA B matrices) | [PR](https://github.com/bitsandbytes-foundation/bitsandbytes/pull/2117) |
-| [lighteval](https://github.com/huggingface/lighteval) | The standard error of averaged rows is the mean of the subtask errors, about 7x too large on MMLU | [PR](https://github.com/huggingface/lighteval/pull/1468) |
-| [TensorFlow Probability](https://github.com/tensorflow/probability) | KL divergence of transformed distributions with a non-injective bijector returns the base KL | [PR](https://github.com/tensorflow/probability/pull/2037) |
-| [solo-learn](https://github.com/vturrisi/solo-learn) | The SupCon loss is the paper's L_in, not the L_out it specifies (Khosla et al. 2020, Eq. 2) | [PR](https://github.com/vturrisi/solo-learn/pull/402) |
-| [diffusers](https://github.com/huggingface/diffusers) | `--logit_mean` shifts SD3 training timesteps in the opposite direction to the paper | [Issue](https://github.com/huggingface/diffusers/issues/15166) |
-| [NVIDIA Merlin](https://github.com/NVIDIA-Merlin) | The logQ correction is applied before the softmax temperature, which biases sampled-softmax training towards popular items | [Issue](https://github.com/NVIDIA-Merlin/Transformers4Rec/issues/826), [fix PR](https://github.com/NVIDIA-Merlin/Transformers4Rec/pull/827); same bug in Merlin Models: [issue](https://github.com/NVIDIA-Merlin/models/issues/1249) |
-| NVIDIA Merlin | Unique log-uniform sampling keeps only the smallest ids, so rare items are corrected as if sampled far more often than they are | [PR](https://github.com/NVIDIA-Merlin/Transformers4Rec/pull/828) |
-
 ## Tech stack
 
 **Languages**
@@ -155,7 +129,7 @@ pull request where I could.
 
 - Writing up research on machine learning training objectives
 - Pre-thesis project on reproducibility and cold-start ranking in multimodal recommender systems
-- Auditing ML libraries for mathematical bugs ([contributions](#open-source-contributions))
+- Contributor to Hugging Face transformers ([fix for Doge's MoE load-balancing loss](https://github.com/huggingface/transformers/pull/50266))
 - Open to collaborations on machine learning research and tooling
 
 ## Contributions
