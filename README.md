@@ -37,33 +37,50 @@ Distil an LLM classification prompt into a small, fast model that runs on a CPU.
 **[Try the live demo](https://andreas-hum.github.io/tinydistill/demo/)** · [Documentation](https://andreas-hum.github.io/tinydistill/) · [Code](https://github.com/Andreas-Hum/tinydistill) · `pip install tinydistill`
 
 ```mermaid
-flowchart LR
-    A["Task prompt +<br/>unlabelled texts"] --> B["LLM teacher(s)<br/>Qwen · Gemma · Mistral · ..."]
-    T["tune: test and rewrite<br/>the task file"] -.-> B
-    S["Synthetic texts<br/>(synth)"] -.-> B
-    V["vLLM server ·<br/>hosted API"] -.-> B
-    K["A few gold labels<br/>per class"] -.-> B
-    K -.-> C
-    B -- "soft labels<br/>(ensembled)" --> C["Small encoder<br/>student"]
-    C --> D["ONNX / int8<br/>export"]
-    D --> E["Fast CPU<br/>inference"]
-    D --> W["Browser · server · Hub ·<br/>Python (Distiller)"]
-    E -.-> F["Cascade: unsure<br/>texts to the LLM"]
-    F -. "refresh: retrain<br/>on what it asked" .-> C
-    C -. "improve: new texts<br/>for its confusions" .-> S
+flowchart TB
+    A["Task file<br/>prompt and labels"]
+    U["Unlabelled texts<br/>yours, or from synth"]
+    K["About 8 gold labels<br/>per class (optional)"]
+    subgraph LABEL["1 · label: the teacher"]
+        R["Each text's 16 most<br/>similar gold examples"]
+        B["LLM teacher<br/>local · vLLM · hosted API"]
+        P["Linear probe on the<br/>teacher's hidden states"]
+    end
+    subgraph TRAIN["2 · train: the student"]
+        C["Small encoder<br/>MiniLM · mpnet · static"]
+    end
+    subgraph SHIP["3 · export and deploy"]
+        D["ONNX int8<br/>milliseconds on a CPU"]
+        E["Python · HTTP server ·<br/>browser · Hugging Face Hub"]
+        F["Cascade: unsure<br/>texts to the LLM"]
+    end
+    A --> B
+    U --> B
+    K --> R
+    R -- "in the prompt" --> B
+    B -- "hidden states" --> P
+    K -- "fit on" --> P
+    P == "soft labels" ==> C
+    B -. "or: a score for<br/>every label" .-> C
+    K -. "cross-entropy" .-> C
+    C --> D
+    D --> E
+    D -.-> F
 ```
 
-**Results on Banking77** (77 intents, 3,080 held-out test texts; latency per text on an RTX 4090 for the teacher and 2
-CPU threads for the students; the students learn from the teacher's soft labels plus 8 gold labels per class;
+**Results on Banking77** (77 intents, 3,080 held-out test texts; latency per text, one at a time; the teacher sees
+each text's 16 most similar of 616 gold examples (8 per class) and adds a linear probe on its hidden states, and the
+student learns from its soft labels plus those gold labels;
 [all benchmarks](https://github.com/Andreas-Hum/tinydistill/blob/main/RESULTS.md)):
 
 | Model | Runs on | Accuracy | Latency | Size | Speed-up |
 |---|---|---|---|---|---|
-| Teacher: Qwen2.5-7B, 4-bit, 8-shot | GPU | 0.783 | 264 ms | 5.4&nbsp;GB | 1x |
-| Student: MiniLM-L6, int8 | CPU | **0.814** | 1.2 ms | 23&nbsp;MB | **214x** |
-| Student: static embeddings, int8 | CPU | 0.802 | 0.1 ms | 8&nbsp;MB | **3244x** |
+| Teacher: Qwen2.5-7B, 4-bit, 16 similar examples + probe | RTX 4090 | 0.859 | 155 ms | 5.4&nbsp;GB | 1x |
+| Student: MiniLM-L6, int8 | CPU, 2 threads | **0.872** | 1.0 ms | 23&nbsp;MB | **153x** |
 
-The students are more accurate than their teacher and hundreds of times faster on a CPU than the teacher on a GPU.
+The student is more accurate than its teacher and over 150 times faster on a CPU than the teacher on a GPU. With the
+probe alone as the teacher (the default from 0.7.0), labelling takes minutes instead of hours: on CLINC150 (151 intents) the
+deployed student reaches 0.851 after 37 minutes of labelling, against 0.859 after 7.2 hours.
 
 ### Distillation Playground
 
