@@ -1,14 +1,12 @@
 <div align="center">
 
-# Hi, I'm Andreas
+# Andreas Hummelmose
 
 ### MSc Computer Science student at Aalborg University · Machine learning research · LLMs · Recommender systems
 
 <a href="mailto:Andreas@hummelmose.dk"><img src="https://img.shields.io/badge/Email-Andreas%40hummelmose.dk-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
 <a href="https://www.linkedin.com/in/andreas-hummelmose-77580a252/"><img src="https://img.shields.io/badge/LinkedIn-Andreas%20Hummelmose-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="https://huggingface.co/Shroomy"><img src="https://img.shields.io/badge/Hugging%20Face-Shroomy-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" /></a>
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1200&center=true&vCenter=true&width=640&lines=Machine+learning+research;Fine-tuning+LLMs+with+LoRA+and+QLoRA;Distilling+LLMs+for+faster+inference;Recommender+systems;Reproducible+ML+research" alt="Typing SVG" />
+<a href="https://huggingface.co/Shroomy"><img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" /></a>
 
 </div>
 
@@ -138,11 +136,3 @@ An interactive, in-browser demo of knowledge distillation. A teacher network and
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Andreas-Hum/Andreas-Hum/output/github-snake-dark.svg">
   <img alt="Contribution graph as an animated snake" src="https://raw.githubusercontent.com/Andreas-Hum/Andreas-Hum/output/github-snake.svg">
 </picture>
-
----
-
-<div align="center">
-
-*"Measure what models actually learn, not what they are claimed to learn."*
-
-</div>
