@@ -129,7 +129,7 @@ An interactive, in-browser demo of knowledge distillation. A teacher network and
 
 - Writing up research on machine learning training objectives
 - Pre-thesis project on reproducibility and cold-start ranking in multimodal recommender systems
-- Contributor to Hugging Face transformers ([fix for Doge's MoE load-balancing loss](https://github.com/huggingface/transformers/pull/50266))
+- Contributor to Hugging Face transformers ([fix for Doge's MoE load-balancing loss](https://github.com/huggingface/transformers/pull/50266)) and Keras ([what CutMix's `factor` argument controls](https://github.com/keras-team/keras/pull/24128))
 - Open to collaborations on machine learning research and tooling
 
 ## Contributions
